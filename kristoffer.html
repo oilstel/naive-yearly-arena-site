@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorded by Kristoffer Tjalve in Athens</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        nav a.active {
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <a href="index.html">.</a>
+            <a href="kristoffer.html" class="active">.</a>
+            <a href="meg.html">.</a>
+            <a href="ben.html">.</a>
+            <a href="wietske.html">.</a>
+        </nav>
+        <div id="screen">
+            <div id="subtitle"></div>
+        </div>
+    </main>
+
+    <div id="player">
+        <audio id="audio" src="audio/kristoffer.mp3" data-subtitle="subtitles/kristoffer.json" controls></audio>
+    </div>
+
+    <p id="credit">Recorded by Kristoffer Tjalve in Athens</p>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

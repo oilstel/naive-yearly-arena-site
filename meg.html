@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorded by Meg Miller in Berlin</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        nav a.active {
+            background-color: magenta;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <a href="index.html">.</a>
+            <a href="kristoffer.html">.</a>
+            <a href="meg.html" class="active">.</a>
+            <a href="ben.html">.</a>
+            <a href="wietske.html">.</a>
+        </nav>
+        <div id="screen">
+            <div id="subtitle"></div>
+        </div>
+    </main>
+
+    <div id="player">
+        <audio id="audio" src="audio/meg.mp3" data-subtitle="subtitles/meg.json" controls></audio>
+    </div>
+
+    <p id="credit">Recorded by Meg Miller in Berlin</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

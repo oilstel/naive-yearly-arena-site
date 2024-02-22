@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #4CA1B3;
+    background-color: #000;
+    /* background-color: #4CA1B3;
+    background-color: #000; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-text-size-adjust: none; 
+    display: flex;
+}
+
+nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    padding: 20px;
+}
+nav a {
+    font-family: Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    line-height: 0;
+    height: 15px;
+    font-size: 14px;
+    
+}
+nav a.active {
+    color: #000;
+    background-color: #fff;
+}
+
+@keyframes movedot1 {
+    0%, 100% {
+        left: -1px;
+        visibility: hidden;
+    }
+    1% {
+        visibility: visible;
+    }
+    50% {
+        left: 100%;
+        visibility: visible;
+    }
+}
+@keyframes movedot2 {
+    0% {left: -1px;}
+    50% {left: 100%;}
+    100% {left: -1px;}
+}
+@keyframes movedot3 {
+    0% {left: -1px;}
+    50% {left: 100%;}
+    100% {left: -1px;}
+}
+@keyframes movedot4 {
+    0% {left: -1px;}
+    50% {left: 100%;}
+    100% {left: -1px;}
+}
+@keyframes movedot5 {
+    0% {left: -1px;}
+    50% {left: 100%;}
+    100% {left: -1px;}
+}
+@keyframes movedot6 {
+    0% {left: -1px;}
+    50% {left: 100%;}
+    100% {left: -1px;}
+}
+.dot {
+    position: absolute;
+    font-family: Times New Roman;
+    white-space: nowrap;
+    filter: blur(3px);
+    visibility: hidden; /* Initial state is hidden */
+}
+
+.dot1 {
+    animation: movedot1 320s linear infinite;
+    animation-delay: 0s;
+    color: cyan;
+}
+.dot2 {
+    animation: movedot2 210s linear infinite;
+    animation-delay: 2s;
+    color: brown;
+}
+.dot3 {
+    animation: movedot3 400s linear infinite;
+    animation-delay: 4s;
+    color: purple;
+}
+.dot4 {
+    animation: movedot1 123s linear infinite;
+    animation-delay: 6s;
+    color: white;
+}
+.dot5 {
+    animation: movedot2 115s linear infinite;
+    animation-delay: 8s;
+    color: greenyellow;
+}
+.dot6 {
+    animation: movedot3 90s linear infinite;
+    animation-delay: 10s;
+    color: coral;
+}
+
+
+ul li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 5px;
+}
+ul li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+ul li#magenta::before { background-color: magenta; }
+ul li#green::before { background-color: green; }
+ul li#orange::before { background-color: orangered; }
+ul li.clear::before { background-color: #f0f0f0; }
+ul li.archived::before { border: 1px solid #4CA1B3; width: 9px; height: 9px; }
+ul li#pages::before { background-color: blue; }
+ul li#email::before { background-color: yellow; }
+
+p {
+    margin: 40px;
+    max-width: 535px;
+}
+
+main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* align-items: center; */
+        /* grid-template-columns: repeat(30, 1fr); */
+        /* grid-template-columns: repeat(auto-fill, minmax(20px, auto)); */
+        /* grid-template-rows: repeat(100, 1fr); */
+        height: 100dvh;
+        width: 100dvw;
+}
+#screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+#subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* background-color: purple; */
+    padding: 40px;
+}
+
+a {
+    color: #4CA1B3;
+}
+.dots {
+    display: relative;
+    overflow: hidden;
+    font-size: 50px;
+}
+.dot {
+    position: absolute;
+    font-family: Times New Roman;
+    /* color: #000 !important; */
+    white-space: nowrap;
+    /* animation-timing-function: ease-in-out; */
+    filter: blur(3px);
+}
+
+#player {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+#credit {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+}
