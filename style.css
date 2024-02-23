@@ -18,7 +18,7 @@ nav {
     display: flex;
     flex-flow: row nowrap;
     gap: 10px;
-    padding: 20px;
+    padding: 12px;
 }
 nav a {
     font-family: Courier, monospace;
@@ -30,6 +30,8 @@ nav a {
     line-height: 0;
     height: 15px;
     font-size: 14px;
+    border-radius: 2px;
+    padding: 5px;
     
 }
 nav a.active {
@@ -204,18 +206,20 @@ a {
 
 @media (max-width: 700px) {
     nav {
-        padding: 18px;
+        padding: 13px;
     }
     nav a {
-        padding: 5px;
+        padding: 10px;
     }
     #subtitle {
-        font-size: 14px;
+        font-size: 15px;
+        text-align: left;
     }
     #credit {
         font-size: 9px;
         transform: rotate(-90deg) translateX(100%);
         transform-origin: bottom right;
         margin: 0;
+        right: 10px;
     }
 }
