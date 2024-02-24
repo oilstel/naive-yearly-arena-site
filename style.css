@@ -40,49 +40,43 @@ nav a.active {
 }
 
 @keyframes movedot1 {
-    0%, 100% {
-        left: -1px;
-        visibility: hidden;
-    }
-    1% {
-        visibility: visible;
-    }
-    50% {
-        left: 100%;
-        visibility: visible;
-    }
+    0% {left: -1px;}
+    50% {left: calc(100% - 13px);}
+    100% {left: -1px;}
 }
 @keyframes movedot2 {
     0% {left: -1px;}
-    50% {left: 100%;}
+    50% {left: calc(100% - 13px);}
     100% {left: -1px;}
 }
 @keyframes movedot3 {
     0% {left: -1px;}
-    50% {left: 100%;}
+    50% {left: calc(100% - 13px);}
     100% {left: -1px;}
 }
 @keyframes movedot4 {
     0% {left: -1px;}
-    50% {left: 100%;}
+    50% {left: calc(100% - 13px);}
     100% {left: -1px;}
 }
 @keyframes movedot5 {
     0% {left: -1px;}
-    50% {left: 100%;}
+    50% {left: calc(100% - 13px);}
     100% {left: -1px;}
 }
 @keyframes movedot6 {
     0% {left: -1px;}
-    50% {left: 100%;}
+    50% {left: calc(100% - 13px);}
     100% {left: -1px;}
 }
 .dot {
     position: absolute;
     font-family: Times New Roman;
     white-space: nowrap;
+    left: -15px;
+    line-height: 0;
     filter: blur(3px);
-    visibility: hidden; /* Initial state is hidden */
+    font-size: 50px;
 }
 
 .dot1 {
@@ -178,15 +172,7 @@ a {
 .dots {
     display: relative;
     overflow: hidden;
-    font-size: 50px;
-}
-.dot {
-    position: absolute;
-    font-family: Times New Roman;
-    /* color: #000 !important; */
-    white-space: nowrap;
-    /* animation-timing-function: ease-in-out; */
-    filter: blur(3px);
+    margin-top: -25px;
 }
 
 #player {
@@ -202,6 +188,15 @@ a {
     font-size: 11px;
     color: #fff;
     margin: 0;
+}
+.instructions {
+    display: block;
+    font-family: courier;
+    margin-bottom: -5px;
+}
+.instructions .keystroke {
+    color: #000;
+    background-color: #fff;
 }
 
 @media (max-width: 700px) {

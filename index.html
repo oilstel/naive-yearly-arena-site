@@ -43,6 +43,75 @@
         <audio id="audio" src="audio/soundtrack.mp3" controls></audio>
     </div>
 
-    <p id="credit"><i>Dots</i>, from Elliott Cost's Naive Weekly talk on Friday, August 11th, 2023</p>
+    <p id="credit" style="text-align: right;">
+        <span class="instructions">Instructions: <span class="keystroke">&lt;</span> <span class="keystroke">&gt;</span> to focus camera</span><br>
+        <i>Dots</i>, from Elliott Cost's Naive Weekly talk on Friday, August 11th, 2023<br>
+    </p>
+
+    <script>
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    if (key === "<" || key === ",") { // For "<" key press
+        adjustDotSizeAndBlur(false); // Decrease size
+    } else if (key === ">" || key === ".") { // For ">" key press
+        adjustDotSizeAndBlur(true); // Increase size
+    }
+});
+
+function adjustDotSizeAndBlur(increase) {
+    const dots = document.querySelectorAll('.dot');
+    const fontSizeChange = 5; // Change in pixels for font size, adjust as needed
+
+    dots.forEach(dot => {
+        let currentSize = parseInt(window.getComputedStyle(dot).fontSize);
+        let newSize = increase ? currentSize + fontSizeChange : Math.max(currentSize - fontSizeChange, 10); // Prevents font size from becoming 0 or negative
+
+        // Dynamically adjust blur based on the font size.
+        let newBlur = calculateBlur(newSize);
+
+        // Calculate and apply new margin-top based on the size increase.
+        let newMarginTop = calculateMarginTop(newSize);
+
+        dot.style.fontSize = `${newSize}px`;
+        dot.style.filter = `blur(${newBlur}px)`;
+        dot.style.marginTop = `${newMarginTop}px`;
+    });
+}
+
+function calculateBlur(size) {
+    const baseSize = 50; // Reference size for standard blur
+    let blurRatio;
+    let newBlur;
+
+    if (size > baseSize) {
+        blurRatio = 3 / baseSize;
+        newBlur = size * blurRatio;
+    } else {
+        const reductionFactor = 0.05;
+        blurRatio = (3 / baseSize) - ((baseSize - size) * reductionFactor / baseSize);
+        newBlur = Math.max(size * blurRatio, 0);
+    }
+
+    return newBlur;
+}
+
+function calculateMarginTop(size) {
+    const baseSize = 50; // Starting reference size
+    const initialMargin = 0; // Initial margin-top value at baseSize
+    // Calculate margin change based on size difference from baseSize
+    // This formula can be adjusted based on desired effect
+    // Here, we decrease margin as size increases, going negative
+    const marginChangeRate = -0.3; // Adjust this rate to control how quickly margin-top changes
+    const sizeDifference = size - baseSize;
+    return initialMargin + (sizeDifference * marginChangeRate);
+}
+
+
+
+
+
+
+    </script>
 </body>
 </html>
