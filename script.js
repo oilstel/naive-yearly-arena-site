@@ -30,3 +30,28 @@ function setupSubtitles(subtitles) {
 }
 
 loadSubtitles(); // Call this function to start the process
+
+
+
+
+document.addEventListener('keydown', (event) => {
+    const audio = document.getElementById('audio'); // Ensure this matches the ID of your audio element
+    if (!audio) return;
+
+    switch(event.key) {
+        case ' ':
+            event.preventDefault(); // Prevent the default action to stop scrolling
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            break;
+        case 'ArrowLeft':
+            audio.currentTime = Math.max(0, audio.currentTime - 5); // Seek backwards 5 seconds
+            break;
+        case 'ArrowRight':
+            audio.currentTime = Math.min(audio.duration, audio.currentTime + 5); // Seek forwards 5 seconds
+            break;
+    }
+});
