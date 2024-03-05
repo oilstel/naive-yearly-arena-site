@@ -31,8 +31,10 @@ nav a {
     height: 15px;
     font-size: 14px;
     border-radius: 2px;
-    padding: 5px;
-    
+    padding: 5px;   
+}
+nav a:hover {
+    background-color: rgb(33, 33, 33);
 }
 nav a.active {
     color: #000;
