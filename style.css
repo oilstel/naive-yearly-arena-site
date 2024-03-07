@@ -161,7 +161,7 @@ main {
     color: #ffffff;
     text-align: center;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     /* background-color: purple; */
     padding: 40px;
     width: 100%;
